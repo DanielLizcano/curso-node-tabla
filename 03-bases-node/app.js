@@ -1,24 +1,28 @@
-
+console.clear();
 //asi se importan librerias
 const fs = require('fs');
 const { createRequire } = require('module');
 const { crearArchivo }=require('./helpers/multiplicar');
-const argv = require('yargs').argv;
+const argv = require ('./config/yargs');
 let salida = '';
-console.clear();
+
 //desde aqui se insertan valores por consola=======================
 //console.log(process.argv);
 // const [ , , arg3 = 'm=5' ]=process.argv;
 // const [ , m] = arg3.split('=');
-console.log(process.argv);
+//console.log(process.argv);
 console.log(argv)
 console.log('m: yargs', argv.m);
 //================================================================
 //const m=11;
 
-// crearArchivo(m)
-//      .then (nombreArchivo=>console.log(nombreArchivo, 'creado'))
-//      .catch(err => console.log(err));
+crearArchivo(argv.m, argv.l, argv.h)
+     .then (nombreArchivo=>console.log(nombreArchivo, 'creado'))
+     .catch(err => console.log(err));
+
+
+
+
 
 
 //-------------------------------------

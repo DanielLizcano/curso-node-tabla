@@ -47,20 +47,23 @@ const { resolve } = require('path/posix');
 
 //METODO ASYNC PARA CREAR TABLAS ==================================
 
-const crearArchivo =async(m = 5) =>{
+const crearArchivo =async(m = 5, listar=false, hasta=20) =>{
     try{
-    console.log('=================');
-    console.log('Tabla del:', m);
-    console.log('=================');
         
     let salida = '';
      
-    for (let i=1;i<11;i++){      
+    for (let i=1;i<=hasta;i++){      
         salida += `${m} x ${i} = ${m*i}\n`;
     }
-    console.log(salida);
+    if (listar){
+        console.log('=================');
+        console.log('Tabla del:', m);
+        console.log('=================');
+        console.log(salida);
+            }
     
-    fs.writeFileSync(`tabla-${m}.txt`, salida);
+    
+    fs.writeFileSync(`./salida/tabla-${m}.txt`, salida);
     
     return `tabla-${m}.txt`;
 } catch (error){
