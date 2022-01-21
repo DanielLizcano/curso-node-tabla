@@ -1,0 +1,8 @@
+//ejecutar power shell en administrador
+ssh -p 14521 adminipred@ipred2uis.cloudapp.net	#se ingresa como ssh y se coloca el puerto el usuario y el host
+Ip414#adCit9					#contraseña del servidor
+sudo su						#para entrar como super usuario y navegar entre carpetas
+c /etc/apache2/sites-available/			#carpeta direccion
+sudo systemctl stop apache2			#comando para detener el servicio de apache
+certbot renew					#comando para actualizar el certificado SSL
+sudo systemctl start apache2 			#comando para iniciar el servicio de apache
